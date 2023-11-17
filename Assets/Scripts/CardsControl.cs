@@ -12,17 +12,6 @@ public class CardsControl : MonoBehaviour
     public float spacing = 0.4f;
     private bool showCards;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    
-    }
 
     private void OnMouseDown()
     {
