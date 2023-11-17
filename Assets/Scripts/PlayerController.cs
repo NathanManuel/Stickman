@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Quaternion cardsRotation = new Quaternion(0f, 0f, 0f, 0f);
 
     [Header ("PlayerHitBoxes")]
-    private List<Transform> punches = new List<Transform>();
-    private List<Transform> kicks = new List<Transform>();
+    [SerializeField] private List<Transform> punches = new List<Transform>();
+    [SerializeField] private List<Transform> kicks = new List<Transform>();
 
 
 

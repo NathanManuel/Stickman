@@ -8,8 +8,8 @@ public class Card : MonoBehaviour
     public int handIndex;
 
     private GameManager gm;
-    private Vector3 hover;
-    public Vector3 intialPos;
+    [SerializeField] private Vector3 mouseHoverOverCard;
+    [SerializeField] public Vector3 intialCardPosition;
 
 
     void Start()
@@ -19,8 +19,8 @@ public class Card : MonoBehaviour
 
     void Update()
     {
-        hover = gm.cardSlots[handIndex].transform.position + (Vector3.up * 0.05f);
-        intialPos = gm.cardSlots[handIndex].transform.position;
+        mouseHoverOverCard = gm.cardSlots[handIndex].transform.position + (Vector3.up * 0.05f);
+        intialCardPosition = gm.cardSlots[handIndex].transform.position;
 
     }
 
@@ -28,20 +28,20 @@ public class Card : MonoBehaviour
     {
         if (gm.selectedCard != null)
         {
-            gm.selectedCard.transform.position = gm.selectedCard.intialPos;
+            gm.selectedCard.transform.position = gm.selectedCard.intialCardPosition;
         }
         gm.selectedCard = this;
     }
 
     private void OnMouseOver()
     {
-        transform.position = hover;
+        transform.position = mouseHoverOverCard;
     }
     private void OnMouseExit()
     {
         if (gm.selectedCard != this)
         {
-            transform.position = intialPos;
+            transform.position = intialCardPosition;
         }
     }
     public void MoveToDiscardPile()
